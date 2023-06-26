@@ -1,8 +1,8 @@
 import React from 'react';
-import Card from './Card';
+import Card from '../Card/Card';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Loaded from './Loaded';
+import Loaded from '../Loader/Loaded';
 
 const Cards = ({ allPokemons }) => {
 	const Containercards = styled.div`

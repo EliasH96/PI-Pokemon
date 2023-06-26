@@ -3,8 +3,9 @@ import bg from '../img/detail.jpg';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemonsById } from '../actions';
+import { getPokemonsById } from '../../actions';
 import { NavLink, useParams } from 'react-router-dom';
+
 const Detail = () => {
 	const dispatch = useDispatch();
 	let { id } = useParams();

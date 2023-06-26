@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getPokemonsByName } from '../actions';
+import { getPokemonsByName } from '../../actions';
 
 const SearchBar = ({ setCurrentPage }) => {
 	/* 	const Input = styled.input`

@@ -7,16 +7,16 @@ import {
 	filterByCreatedOrExist,
 	filterByTypes,
 	orderBy,
-} from '../actions';
+} from '../../actions';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 //Components
-import Cards from './Cards';
-import BtnCreate from './BtnCreate';
-import NavBar from './NavBar';
-import Header from './Header';
-import Paged from './Paged';
+import Cards from '../Cards/Cards';
+import BtnCreate from '../BtnCreate/BtnCreate';
+import NavBar from '../NavBar/NavBar';
+import Header from '../Header/Header';
+import Paged from '../Paged/Paged';
 const Home = () => {
 	const dispatch = useDispatch();
 	const allPokemons = useSelector((state) => state.pokemons);
