@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { postPokemon, getTypes } from '../../Redux/actions';
+import { postPokemon, getTypes } from '../../actions';
 
 import { NavLink, useHistory } from 'react-router-dom';
 

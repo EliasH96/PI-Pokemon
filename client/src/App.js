@@ -1,24 +1,31 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './components/Home/Home';
+import { Route, Switch } from 'react-router';
+import Home from './components/Home';
 import PokeCreate from './components/PokeCreate/PokeCreate';
-import LandingPage from './components/LandingPage/LandingPage';
-import Error from './components/Error/Error';
-import Detail from './components/Detail/Detail';
-
+import LandingPage from './components/LandingPage';
+import Error from './components/Error';
+import Detail from './components/Detail';
 function App() {
 	return (
-		<Router>
-			<div className='App'>
-				<Routes>
-					<Route exact path='/' element={<LandingPage />} />
-					<Route path='/home' element={<Home />} />
-					<Route path='/create' element={<PokeCreate />} />
-					<Route path='/pokemons/:id' element={<Detail />} />
-					<Route element={<Error />}/>
-				</Routes>
-			</div >
-		</Router>
+		<div className='App'>
+			<Switch>
+				<Route exact path='/'>
+					<LandingPage />
+				</Route>
+				<Route path='/home'>
+					<Home />
+				</Route>
+				<Route path='/create'>
+					<PokeCreate />
+				</Route>
+				<Route path='/pokemons/:id'>
+					<Detail />
+				</Route>
+				<Route>
+					<Error />
+				</Route>
+			</Switch>
+		</div>
 	);
 }
 
