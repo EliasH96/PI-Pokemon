@@ -7,7 +7,7 @@ import {
 	filterByCreatedOrExist,
 	filterByTypes,
 	orderBy,
-} from '../../actions';
+} from '../../Redux/actions';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
