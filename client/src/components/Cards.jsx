@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 import Loaded from './Loaded';
 
 const Cards = ({ allPokemons }) => {
+	
 	const Containercards = styled.div`
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-		padding: 10px 80px 50px;
+		padding: 60px 80px 60px 80px;
 		grid-gap: 30px 30px;
 		justify-content: center;
 		@media (max-width: 900px) {

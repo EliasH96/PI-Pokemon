@@ -1,10 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { postPokemon, getTypes } from '../../actions';
-
+import { postPokemon, getTypes } from '../../Redux/actions/index';
 import { NavLink, useHistory } from 'react-router-dom';
-
 import styles from './createPoke.module.css';
 
 const PokeCreate = () => {
@@ -49,7 +47,7 @@ const PokeCreate = () => {
 
 	function handleSubmit(e) {
 		dispatch(postPokemon(input));
-		alert('Pokémon Created');
+		alert('Pokemon Created');
 		setInput({
 			name: '',
 			hp: 0,
@@ -83,7 +81,7 @@ const PokeCreate = () => {
 		) {
 			setError({
 				...input,
-				[e.target.name]: 'Pokémon duplicated',
+				[e.target.name]: 'Pokemon duplicated',
 			});
 		}
 	}
@@ -92,11 +90,10 @@ const PokeCreate = () => {
 	function validate(input) {
 		let errors = {};
 		if (input.name === '') {
-			errors.name = "The Pokémon's name is required";
+			errors.name = "The Pokemon's name is required";
 		} else if (input.name.trim() < 4) {
 			errors.name = '4';
 		}
-
 		return errors;
 	}
 
@@ -131,7 +128,7 @@ const PokeCreate = () => {
 				</svg>
 			</NavLink>
 			<div className={styles.containerForm}>
-				<h1 className={styles.title}>Create Pokémon</h1>
+				<h1 className={styles.title}>Create Your Own Pokemon</h1>
 				<form onSubmit={(e) => handleSubmit(e)}>
 					{error.name ? (
 						<input

@@ -5,6 +5,7 @@ import BtnCreate from './BtnCreate';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
+
 	const LogoImg = styled.img`
 		width: 150px;
 
@@ -37,6 +38,7 @@ const Header = () => {
 			<NavLink to='/'>
 				<LogoImg src={logo} />
 			</NavLink>
+			
 			<NavLink to='/create'>
 				<BtnCreate flag={true} />
 			</NavLink>

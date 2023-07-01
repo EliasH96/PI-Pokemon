@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BtnCreate = ({ flag }) => {
+
 	const Btn = styled.button`
 		position: fixed;
 		right: 20px;

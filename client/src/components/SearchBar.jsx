@@ -2,26 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getPokemonsByName } from '../actions';
+import { getPokemonsByName } from '../Redux/actions/index';
 
-const SearchBar = ({ setCurrentPage }) => {
-	/* 	const Input = styled.input`
-		padding: 10px 20px;
-		border-radius: 5px;
-		border: 1px solid #7e7e7e;
-		background: #1e2125;
-		color: #e2dddd;
-		font-size: 16px;
-		margin: 10px 0 10px;
-
-		width: 300px;
-		flex-basis: 30%;
-		@media (max-width: 900px) {
-			& {
-				width: 55vw;
-			}
-		}
-	`; */
+const SearchBar = ({ setCurrentPage }) => { 
 
 	const Btn = styled.button`
 		font-size: 16px;

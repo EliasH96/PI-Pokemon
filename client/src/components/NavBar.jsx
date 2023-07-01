@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SearchBar from './SearchBar';
+
 const NavBar = ({
 	types,
 	clearFilter,
@@ -111,4 +112,5 @@ const NavBar = ({
 		</NavFilter>
 	);
 };
+
 export default NavBar;

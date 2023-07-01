@@ -40,7 +40,7 @@ const LandingPage = () => {
 
 	return (
 		<ContainerLanding>
-			<LandingH1>POKE API</LandingH1>
+			<LandingH1>WELCOME TO MY POKE API</LandingH1>
 			<NavLink to='/home'>
 				<LandingBtn>Enter</LandingBtn>
 			</NavLink>

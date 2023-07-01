@@ -2,73 +2,66 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function Card({ id, name, img, types }) {
+
 	function colorPicker(mainType) {
 		switch (mainType) {
 			case 'grass':
 				return '#109617be';
-				break;
+				
 			case 'fire':
 				return '#e0790add';
-				break;
-
+			
 			case 'water':
 				return '#0a79e0e1';
-				break;
-
+				
 			case 'bug':
 				return '#08410ce2';
-				break;
-
+				
 			case 'electric':
 				return '#d0c208c5';
-				break;
-
+				
 			case 'poison':
 				return '#9c40d1c7';
-				break;
-
+				
 			case 'fairy':
 				return '#d873d8e0';
-				break;
+				
 			case 'normal':
 				return '#b6b6b6dd';
-				break;
+				
 			case 'ground':
 				return '#632902c7';
-				break;
+				
 			case 'ghost':
 				return '#3f0e43c5';
-				break;
+			
 			case 'flying':
 				return '#719ab6c5';
-				break;
+				
 			case 'fighting':
 				return '#61041585';
-				break;
+				
 			case 'rock':
 				return '#2c181cc5';
-				break;
+				
 			case 'steel':
 				return '#3c3b3bc5';
-				break;
-			case 'steel':
-				return '#3c3b3bc5';
-				break;
+				
 			case 'psychic':
 				return '#df7fe2c5';
-				break;
+				
 			case 'ice':
 				return '#70d7f7c5';
-				break;
+				
 			case 'dragon':
 				return '#3b3fffc5';
-				break;
+				
 			case 'dark':
 				return '#303031c5';
-				break;
+				
 			case 'shadow':
 				return '#0e0e37c5';
-				break;
+				
 			default:
 				return '#eee8e8a8';
 		}

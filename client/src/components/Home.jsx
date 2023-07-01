@@ -7,22 +7,22 @@ import {
 	filterByCreatedOrExist,
 	filterByTypes,
 	orderBy,
-} from '../actions';
+} from '../Redux/actions/index';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-
 //Components
 import Cards from './Cards';
 import BtnCreate from './BtnCreate';
 import NavBar from './NavBar';
 import Header from './Header';
 import Paged from './Paged';
+
 const Home = () => {
 	const dispatch = useDispatch();
 	const allPokemons = useSelector((state) => state.pokemons);
-	const [order, setOrder] = useState('');
+	const [, setOrder] = useState('');
 	const [currentPage, setCurrentPage] = useState(1);
-	const [pokePerPage, SetPokePerPage] = useState(12);
+	const [pokePerPage,] = useState(12);
 	const lastPoke = currentPage * pokePerPage;
 	const firstPoke = lastPoke - pokePerPage;
 	const currentPokes = allPokemons.slice(firstPoke, lastPoke);
@@ -61,7 +61,8 @@ const Home = () => {
 	const ContainerDiv = styled.div`
 		background-color: #141414;
 		color: #fff;
-		height: 100vh;
+		height: 100%;
+		width: 100%;
 		@media (max-width: 900px) {
 			& {
 				height: 100%;

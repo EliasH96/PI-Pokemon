@@ -5,6 +5,7 @@ import PokeCreate from './components/PokeCreate/PokeCreate';
 import LandingPage from './components/LandingPage';
 import Error from './components/Error';
 import Detail from './components/Detail';
+
 function App() {
 	return (
 		<div className='App'>

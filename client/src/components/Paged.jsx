@@ -1,12 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+
 const Paged = ({ pokemonsLength, pokePerPage, currentPage, paged }) => {
+
 	const PagesNav = styled.nav`
+		
 		color: white;
 		position: absolute;
-		bottom: 20px;
-		right: 0;
+		top: 240px;
+		justify-content: center;
 		left: 0;
+		right: 0;
 		@media (max-width: 900px) {
 			& {
 				position: static;
@@ -16,6 +20,7 @@ const Paged = ({ pokemonsLength, pokePerPage, currentPage, paged }) => {
 	`;
 	const UList = styled.ul`
 		display: flex;
+		top: 0;
 		justify-content: center;
 		text-decoration: none;
 		padding-left: 0px;

@@ -28,7 +28,7 @@ const Loaded = () => {
 
 	return (
 		<ContainerGif>
-			{/* {<Gif src={gif} /> && <Text>Don´t Find Anything...</Text>} */}
+			{/* {<Gif src={gif} /> && <Text>Don't Find Anything...</Text>} */}
 		</ContainerGif>
 	);
 };

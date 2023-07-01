@@ -1,10 +1,11 @@
 import React from 'react';
 import bg from '../img/detail.jpg';
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemonsById } from '../actions';
+import { getPokemonsById } from '../Redux/actions/index';
 import { NavLink, useParams } from 'react-router-dom';
+
 const Detail = () => {
 	const dispatch = useDispatch();
 	let { id } = useParams();
@@ -27,8 +28,8 @@ const Detail = () => {
 
 	const Container = styled.div`
 		background: url(${bg});
-		width: 100vw;
-		height: 100vh;
+		width: 100%;
+		height: 120vh;
 		display: flex;
 		font-family: 'Poppins';
 		display: flex;
@@ -42,8 +43,8 @@ const Detail = () => {
 		flex-direction: column;
 		align-items: center;
 		background: #dfdbdbea;
-		width: 900px;
-		height: 700px;
+		width: 850px;
+		height: 600px;
 		border-radius: 30px;
 		color: #2e2e2e;
 		padding: 30px;
@@ -92,20 +93,19 @@ const Detail = () => {
 		justify-content: space-between;
 	`;
 
-	const SVG = styled.svg`
-		height: 70px;
-		width: 70px;
-		color: aliceblue;
-		position: absolute;
-		left: 80px;
-		top: 80px;
-
-		&:hover {
-			transform: scale(1.2);
-			transition: 1s ease-in-out;
-			color: #36a0e7;
-		}
-	`;
+	 const SVG = styled.svg`
+	 	height: 70px;
+	 	width: 70px;
+	 	color: aliceblue;
+	 	position: absolute;
+	 	left: 80px;
+	 	top: 80px;
+	 	&:hover {
+	 		transform: scale(1.2);
+	 		transition: 1s ease-in-out;
+	 		color: #36a0e7;
+	 	}
+	 `;
 
 	const ContainerTypes = styled.div`
 		display: flex;
