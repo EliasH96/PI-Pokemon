@@ -7,10 +7,10 @@ import styles from './createPoke.module.css';
 
 const PokeCreate = () => {
 	const dispatch = useDispatch();
-	const history = useHistory();
-	const types = useSelector((state) => state.types);
+	const history = useHistory();//actualiza el historial de navegacion a una ruta 
+	const types = useSelector((state) => state.types);//selecciona del store los tipos y todos los pokemones
 	const pokemons = useSelector((state) => state.allPokemons);
-	const [input, setInput] = useState({
+	const [input, setInput] = useState({//actualiza el input del form a esos valores
 		name: '',
 		hp: 1,
 		attack: 1,
@@ -23,7 +23,7 @@ const PokeCreate = () => {
 	});
 
 	function handleChange(e) {
-		e.preventDefault();
+		e.preventDefault();//evita comportamientos predeterminados del navegador
 		setInput({
 			...input,
 			[e.target.name]: e.target.value,
@@ -34,7 +34,7 @@ const PokeCreate = () => {
 		if (e.target.checked) {
 			setInput({
 				...input,
-				types: [...input.types, parseInt(e.target.value)],
+				types: [...input.types, parseInt(e.target.value)],//parseInt analiza una cadena y la convierte a numero
 			});
 		}
 		if (!e.target.checked) {

@@ -18,20 +18,20 @@ import Header from './Header';
 import Paged from './Paged';
 
 const Home = () => {
-	const dispatch = useDispatch();
+	const dispatch = useDispatch(); //accede al despachador de acciones
 	const allPokemons = useSelector((state) => state.pokemons);
-	const [, setOrder] = useState('');
-	const [currentPage, setCurrentPage] = useState(1);
-	const [pokePerPage,] = useState(12);
+	const [, setOrder] = useState('');//actualiza el estado, en este caso el ordenamiento
+	const [currentPage, setCurrentPage] = useState(1);//actualiza el estado de las paginas actuales
+	const [pokePerPage,] = useState(12);//asigna 12 pokemones a cada pag
 	const lastPoke = currentPage * pokePerPage;
 	const firstPoke = lastPoke - pokePerPage;
 	const currentPokes = allPokemons.slice(firstPoke, lastPoke);
 	const paged = (pageNumber) => {
 		setCurrentPage(pageNumber);
 	};
-	const types = useSelector((state) => state.types);
+	const types = useSelector((state) => state.types);//accede a los types almacenados en el store
 
-	useEffect(() => {
+	useEffect(() => {//despues de montar el componente se efectua el cambio, en este caso en el dispatch
 		dispatch(getPokemons());
 		dispatch(getTypes());
 	}, [dispatch]);

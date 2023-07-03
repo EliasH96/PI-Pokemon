@@ -136,7 +136,7 @@ export default function Card({ id, name, img, types }) {
 				<InfoH3>{name}</InfoH3>
 				<TypeContainer>
 					{types.map((type) => {
-						type = type[0].toUpperCase() + type.slice(1);
+						type = type[0].toUpperCase() + type.slice(1);//slice extrae elementos indicados en el argumento
 
 						return <InfoType>{type}</InfoType>;
 					})}

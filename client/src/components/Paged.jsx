@@ -57,8 +57,8 @@ const Paged = ({ pokemonsLength, pokePerPage, currentPage, paged }) => {
 		}
 	`;
 
-	const arrayPages = [];
-	for (let i = 0; i < Math.ceil(pokemonsLength / pokePerPage); i++) {
+	const arrayPages = [];//guarda en un array las cant de pag segun la cant de pokes
+	for (let i = 0; i < Math.ceil(pokemonsLength / pokePerPage); i++) {//math.ceil redondea para arriba
 		arrayPages.push(i + 1);
 	}
 

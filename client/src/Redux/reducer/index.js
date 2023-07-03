@@ -5,7 +5,7 @@ const initialState = {
 	types: [],
 };
 
-function rootReducer(state = initialState, action) {
+function rootReducer(state = initialState, action) {//todo eso esta dentro del store
 	switch (action.type) {
 		case 'GET_POKEMONS':
 			return {

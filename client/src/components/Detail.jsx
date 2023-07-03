@@ -8,10 +8,10 @@ import { NavLink, useParams } from 'react-router-dom';
 
 const Detail = () => {
 	const dispatch = useDispatch();
-	let { id } = useParams();
+	let { id } = useParams();//params accede a los parametros de la URL
 	useEffect(() => {
 		dispatch(getPokemonsById(id));
-	}, [dispatch]);
+	}, [dispatch]);//despacha la action de pokebyID para obtener los id
 
 	const {
 		id: idPoke,
