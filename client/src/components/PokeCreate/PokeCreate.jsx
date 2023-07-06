@@ -87,7 +87,7 @@ const PokeCreate = () => {
 	}
 	const [error, setError] = useState({});
 
-	function validate(input) {
+	function validate(input) { //faltan las validaciones de todos los input en el form usando javascript
 		let errors = {};
 		if (input.name === '') {
 			errors.name = "The Pokemon's name is required";
