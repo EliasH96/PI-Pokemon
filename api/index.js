@@ -3,7 +3,7 @@ const { conn, Type } = require('./src/db.js');
 const axios = require('axios');
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(async () => {
+conn.sync({ alter: true }).then(async () => {
 	let info = await axios.get('https://pokeapi.co/api/v2/type');
 	info = info.data.results.map((p) => ({
 		name: p.name,
