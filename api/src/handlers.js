@@ -103,7 +103,7 @@ let getPokemonDbByID = async (id) => {
 			height: info.height,
 		});
 	} catch {
-		return null;
+		return res.status(404).send("There aren't' that data");
 	}
 };
 
@@ -124,7 +124,7 @@ let getPokemonApiByID = async (id) => {
 			height: info.height,
 		});
 	} catch {
-		return null;
+		return res.status(404).send("There aren't that data");
 	}
 };
 
