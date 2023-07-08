@@ -28,7 +28,7 @@ const PokeCreate = () => {
 			...input,
 			[e.target.name]: e.target.value,
 		});
-		setError(
+		setError(//valida errores en los datos 
 			validate({
 				...input,
 				[e.target.name]: e.target.value,
@@ -74,7 +74,7 @@ const PokeCreate = () => {
 			[e.target.name]: e.target.value,
 		});
 		setError(
-			validate({
+			validate({//valida error en el nombre
 				...input,
 				[e.target.name]: e.target.value,
 			})
@@ -274,6 +274,8 @@ const PokeCreate = () => {
 						placeholder='URL img'
 						onChange={(e) => handleChange(e)}
 					></input>
+
+					
 					<div className={styles.containerTypes}>
 						{types.map((type) => {
 							return (
