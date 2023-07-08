@@ -16,13 +16,12 @@ const NavBar = ({
 		align-items: center;
 		padding: 40px 80px 40px;
 		background: #141414;
-		@media (max-width: 900px) {
+		@media (max-width: 600px) {
 			& {
-				position: sticky;
-				top: 94px;
 				z-index: 1;
-				padding: 10px 20px;
-				display: block;
+				left: 0;
+				right: 0;
+				flex-direction: column;
 			}
 		}
 	`;
@@ -30,9 +29,16 @@ const NavBar = ({
 	const ContainerFilter = styled.div`
 		flex-basis: 70%;
 		display: flex;
-		justify-content: flex-end;
-		padding-left: 30px;
+		justify-content: space-between;
 		align-items: center;
+		margin: 10px;
+		@media (max-width: 600px) {
+			& {
+				flex-direction: column;
+				right: 0;
+				left: 0;
+			}
+		}
 	`;
 
 	const Select = styled.select`
@@ -47,9 +53,10 @@ const NavBar = ({
 		letter-spacing: 1px;
 		cursor: pointer;
 		text-transform: capitalize;
-		@media (max-width: 900px) {
+		@media (max-width: 600px) {
 			& {
-				display: none;
+				flex-direction: column;
+				margin: 10px;
 			}
 		}
 	`;
@@ -65,9 +72,9 @@ const NavBar = ({
 		&:hover {
 			background-color: #c0bbbb5e;
 		}
-		@media (max-width: 900px) {
+		@media (max-width: 600px) {
 			& {
-				display: none;
+				flex-direction: column;
 			}
 		}
 	`;
