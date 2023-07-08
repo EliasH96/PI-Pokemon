@@ -28,6 +28,12 @@ const PokeCreate = () => {
 			...input,
 			[e.target.name]: e.target.value,
 		});
+		setError(
+			validate({
+				...input,
+				[e.target.name]: e.target.value,
+			})
+		);
 	}
 
 	function handleCheck(e) {
@@ -85,17 +91,34 @@ const PokeCreate = () => {
 			});
 		}
 	}
+
 	const [error, setError] = useState({});
 
-	function validate(input) { //faltan las validaciones de todos los input en el form usando javascript
+	function validate(input) {
 		let errors = {};
 		if (input.name === '') {
 			errors.name = "The Pokemon's name is required";
-		} else if (input.name.trim() < 4) {
-			errors.name = '4';
+		}
+		if (input.hp <= 0) {
+			errors.hp = "HP value must be higher than 0";
+		}
+		if (input.attack <= 0) {
+			errors.attack = "Attack value must be higher than 0"
+		}
+		if (input.defense <= 0) {
+			errors.defense = "Defense value must be higher than 0"
+		}
+		if (input.speed <= 0) {
+			errors.speed = "Speed value must be higher than 0"
+		}
+		if (input.weight <= 0) {
+			errors.weight = "Weight value must be higher than 0"
+		}
+		if (input.height <= 0) {
+			errors.weight = "Weight value must be higher than 0"
 		}
 		return errors;
-	}
+	};
 
 	useEffect(() => {
 		dispatch(getTypes());
@@ -105,12 +128,61 @@ const PokeCreate = () => {
 		<div className={styles.container}>
 			{error.name ? (
 				<div className={styles.containerError}>
-					<p className={styles.errTitle}>ERRORS</p>
+					<p className={styles.errTitle}>SORRY...</p>
 					<ul class={styles.UlistErr}>
 						<li class={styles.listErr}>{error.name}</li>
 					</ul>
 				</div>
 			) : null}
+			{error.hp ? (
+				<div className={styles.containerError}>
+					<p className={styles.errTitle}>SORRY...</p>
+					<ul class={styles.UlistErr}>
+						<li class={styles.listErr}>{error.hp}</li>
+					</ul>
+				</div>
+			) : null}
+			{error.attack ? (
+				<div className={styles.containerError}>
+					<p className={styles.errTitle}>SORRY...</p>
+					<ul class={styles.UlistErr}>
+						<li class={styles.listErr}>{error.attack}</li>
+					</ul>
+				</div>
+			) : null}
+			{error.defense ? (
+				<div className={styles.containerError}>
+					<p className={styles.errTitle}>SORRY...</p>
+					<ul class={styles.UlistErr}>
+						<li class={styles.listErr}>{error.defense}</li>
+					</ul>
+				</div>
+			) : null}
+			{error.speed ? (
+				<div className={styles.containerError}>
+					<p className={styles.errTitle}>SORRY...</p>
+					<ul class={styles.UlistErr}>
+						<li class={styles.listErr}>{error.speed}</li>
+					</ul>
+				</div>
+			) : null}
+			{error.weight ? (
+				<div className={styles.containerError}>
+					<p className={styles.errTitle}>SORRY...</p>
+					<ul class={styles.UlistErr}>
+						<li class={styles.listErr}>{error.weight}</li>
+					</ul>
+				</div>
+			) : null}
+			{error.height ? (
+				<div className={styles.containerError}>
+					<p className={styles.errTitle}>SORRY...</p>
+					<ul class={styles.UlistErr}>
+						<li class={styles.listErr}>{error.height}</li>
+					</ul>
+				</div>
+			) : null}
+
 			<NavLink to='/home' className={styles.svgBtn}>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
@@ -147,7 +219,6 @@ const PokeCreate = () => {
 							onChange={(e) => handleChangeName(e)}
 						></input>
 					)}
-
 					<input
 						className={styles.inputForm}
 						type='number'

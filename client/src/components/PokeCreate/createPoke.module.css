@@ -137,10 +137,10 @@
 .containerError {
 	width: 300px;
 	background-color: #e92c2ce7;
-	height: 300px;
+	height: 150px;
 	border-radius: 30px;
 	position: absolute;
-	right: 150px;
+	right: 25px;
 }
 
 .errTitle {
