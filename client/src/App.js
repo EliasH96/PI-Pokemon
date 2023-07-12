@@ -5,6 +5,8 @@ import PokeCreate from './components/PokeCreate/PokeCreate';
 import LandingPage from './components/LandingPage';
 import Error from './components/Error';
 import Detail from './components/Detail';
+import axios from 'axios';
+axios.defaults.baseURL = 'https://mypokemonedh.vercel.app/';//deploy
 
 function App() {
 	return (

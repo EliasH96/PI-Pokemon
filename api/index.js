@@ -1,14 +1,10 @@
 const server = require('./src/app.js');
 const { conn, Type } = require('./src/db.js');
-const axios = require('axios');
+require('dotenv').config();
+const { PORT } = process.env.PORT
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(async () => {
-	let info = await axios.get('https://pokeapi.co/api/v2/type');
-	info = info.data.results.map((p) => ({
-		name: p.name,
-	}));
-
+conn.sync({ force: true }).then(() => {
 	let prom = info.map((type) =>
 		Type.findOrCreate({
 			where: { name: type.name },
@@ -19,7 +15,7 @@ conn.sync({ force: true }).then(async () => {
 		console.log('Tipos Cargados...');
 	});
 
-	server.listen(3001, () => {
-		console.log('%s listening at 3001'); // eslint-disable-line no-console
+	server.listen(PORT, () => {
+		console.log('%s listening at ', PORT); // eslint-disable-line no-console
 	});
 });
