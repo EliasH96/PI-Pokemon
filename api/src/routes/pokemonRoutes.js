@@ -23,10 +23,10 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-	const { name, id, img, hp, attack, defense, speed, height, weight, color } =
+	const { name, id, img, hp, attack, defense, speed, height, weight } =
 		req.body; //se usa en post y se envia desde el cliente
 	const result = await createPokemon(
-		name, id, img, hp, attack, defense, speed, height, weight, color
+		name, id, img, hp, attack, defense, speed, height, weight 
 	);
 	result === 'error'
 		? res.status(400).send('El Pokemon no pudo ser creado')

@@ -29,7 +29,7 @@ const getPokemonDetails = async (id) => {
 };
 
 const createPokemon = async (
-	name, id, img, hp, attack, defense, speed, height, weight, types, color
+	name, id, img, hp, attack, defense, speed, height, weight, types
 ) => {
 	if (name) {
 		const poke = await Pokemon.create({
@@ -43,7 +43,6 @@ const createPokemon = async (
 			height,
 			weight,
 			types,
-			color
 		});
 		poke.addType(types);
 	} else {
